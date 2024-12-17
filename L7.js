@@ -82,3 +82,39 @@
 //     return result;
 // }
 // console.log(sum3(7, 3));
+
+
+// // пользовательская ф-ция
+// function greetAnna() {
+//     console.log("Hello, Anna!")
+// }
+
+// greetAnna();
+
+// // область видимости переменных
+// function greetAnna1() {
+//     let greeting = "Hello Anna1";
+//     console.log(greeting);
+// }
+
+// greetAnna1();
+// // console.log(greeting);
+
+let userName1 = "Anna2 ";
+function greetAnna2() {
+    let greeting = "Hello, " + userName1;
+    console.log(greeting); 
+}
+
+greetAnna2();
+
+function greetAnna3() {
+    userName1 = "Hobana";
+    let greeting = "Hello !!! " + userName1;
+    console.log(greeting);
+}
+console.log("--------------");
+console.log(userName1);
+greetAnna3();
+console.log(userName1);
+greetAnna2();

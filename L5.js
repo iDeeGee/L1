@@ -46,6 +46,24 @@ let darthVader = "Luke, I am your father";
 
 //console.log(darthVader.includes("a"));
 
+// let dartVader = "luke, I am your father";
+// dartVader = dartVader.charAt(0).toUpperCase() + dartVader.slice(1);
+// console.log(dartVader);
+
+// let str1 = "AbcdEfg";
+// let str2 = "abCDEFg";
+// console.log(str1 === str2);
+// console.log(str1.toUpperCase() === str2.toUpperCase());
+
+let years = [2000, 2001, 2002, 2003, 2004, 2005];
+let result = [];
+for (let i = 0; i < years.length; i++) {
+    if ((years[i] % 4 === 0 && years[i] % 100 !== 0) || (years[i] % 100 === 0 && years[i] % 400 === 0)) {
+        result.push(years[i]);
+    }
+}
+console.log(result);
+
  
 
 

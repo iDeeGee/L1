@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // массивы
+        console.log('==Деструктуризация массива==');
+        let users = ['J.Bond', 'J.Sparrow'];
+
+        // деструктуризация присваивания
+        let [user1, user2] = users;
+        console.log('Деструктурирующее присваивание: ' + user1 + 'и' + user2);
+        //иначе
+        console.log('Вывод элементов массива с помощью цикла');
+        for(let i = 0; i < users.length; i++) {
+            console.log(users[i] + ' ');
+        }
+        console.log('==Функции возвращающие массив==');
+        let str = "live long and prosper";
+        let [live, long, and, prosper] = str.split(' ');
+        console.log(prosper, and, live, long);
+
+    </script>
+    
+</body>
+</html>

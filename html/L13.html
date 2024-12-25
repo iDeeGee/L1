@@ -11,21 +11,106 @@
 
 <script>
 
-    let openRequest = indexedDB.open('app', 1);
+    // // let openRequest = indexedDB.open('app', 5);
 
-    openRequest.onerror = function(event) {
-        console.error("Error", openRequest.error);
+    // // openRequest.onerror = function(event) {
+    // //     console.error("Error", openRequest.error);
+    // // }
+
+    // // openRequest.onsuccess = function(event) {
+    // //     db = openRequest.result;
+    // //     console.log("Мы внутри БД");
+
+    //     // let transaction = db.transaction('bookStrore', 'readwrite');        // хранилище и тип транзакции.
+    //     // let books = transaction.objectStore('bookStrore');                  // сохраняем объект транзакции.
+
+    //     // let book = {                                                        // сам объект.
+    //     //     title: 'Programming C#',
+    //     //     cost: 3750,
+    //     //     created: new Date(),
+    //     // };
+
+    //     // let request = books.add(book);                                      // также существует put(value, [key]);
+    //     // request.onsuccess = function() {
+    //     //     console.log('Книга успешно добавлена', request.result);
+    //     // };
+
+    //     // request.onerror = function() {
+    //     //     console.log('Ошибка', request.error);
+    //     // }
+
+    //     // // поиск элементов по ключу
+        
+    //     // // получим одну книгу с точным значением ключа.
+    //     // let request1 = books.get(8);
+    //     // request1.onsuccess = function(){
+    //     //     console.log('Книга найдена', request1.result);
+    //     // }
+
+    //     // request1.onerror = function() {
+    //     //     console.log('Ошибка', request1.error);
+    //     // }
+        
+    //     // // получить книги в диапозоне от id < 10 и до конечной.
+    //     // let request2 = books.getAll(IDBKeyRange.upperBound(35, true));
+    //     // request2.onsuccess = function(){
+    //     //     console.log('Книги найдены в диапазоне', request2.result);
+    //     // }
+
+    //     // request2.onerror = function() {
+    //     //     console.log('Ошибка', request2.error);
+    //     // }
+
+    //     // // получить все книги.
+    //     // let request3 = books.getAll();
+    //     // request3.onsuccess = function(){
+    //     //     console.log('Все книги найдены', request3.result);
+    //     // }
+
+    //     // request3.onerror = function() {
+    //     //     console.log('Ошибка', request3.error);
+    //     // }
+
+
+
+
+    // }
+
+    // openRequest.onupgradeneeded = function(event) {
+    //     db = openRequest.result;
+      
+
+    //     switch(event.oldVersion) {
+    //         case 0: 
+    //             console.log('БД инициализирована');
+    //         case 1:
+    //             db.createObjectStore('books', {autoIncrement: true});
+    //             console.log('Хранилище успешно создано');
+    //         case 2:
+    //             db.deleteObjectStore('books');
+    //         case 3:
+    //             db.createObjectStore('bookStrore', {autoIncrement: true});
+    //             //console.log('Хранилище успешно создано');
+    //         case 4:
+    //             db.deleteObjectStore('bookStrore');
+    //             let bookStrore = db.createObjectStore('bookStrore', {autoIncrement: true});
+    //             let index = bookStrore.createIndex('indexCost', 'cost');
+                
+
+    //     }
+    // }
+
+    let requestDelete = indexedDB.deleteDatabase('app');
+    requestDelete.onsuccess = function() {
+        console.log('БД удалена');
+    }
+    requestDelete.onerror = function() {
+        console.log('ошибка при удалении');
     }
 
-    openRequest.onsuccess = function(event) {
-        db = openRequest.result;
-        console.log("Мы внутри БД");
-    }
 
-    openRequest.onupgradeneeded = function(event) {
-        db = openRequest.result;
-        console.log("Обработчик обновления");
-    }
+
+
 
 </script>
 

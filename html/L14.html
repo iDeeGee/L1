@@ -14,7 +14,7 @@
 
         // деструктуризация присваивания
         let [user1, user2] = users;
-        console.log('Деструктурирующее присваивание: ' + user1 + 'и' + user2);
+        console.log('Деструктурирующее присваивание: ' + user1 + ' и ' + user2);
         //иначе
         console.log('Вывод элементов массива с помощью цикла');
         for(let i = 0; i < users.length; i++) {
@@ -24,6 +24,53 @@
         let str = "live long and prosper";
         let [live, long, and, prosper] = str.split(' ');
         console.log(prosper, and, live, long);
+
+
+        // пропускаем элементы
+        console.log('==Пропускаем элементы==');
+        [live, long, and, prosper] = str.split(' ');
+        console.log(live, long + ", " + prosper);
+
+        // перебор
+        console.log('==Деструктуририем перебираемые объекты==');
+        let [one, two, three] = "123";
+        console.log(one, two, three);
+        console.log(one + two + three);
+
+        // оператор "остаточные параметры"
+        console.log('==остаточные параметры==');
+        let [noun, verb, ...other] = ["I am", "gonna", "make", "him"];
+        console.log(noun, verb, other);
+        console.log(other.length);
+
+        // если элементов в массиве меньше
+        console.log('==элементов в массиве меньше==');
+        [one, two, three] = ['one', 'two'];
+        console.log(one, two, three);
+
+        // значения по умолчанию
+        console.log('==значения по умолчанию==');
+        [one, two, three = 'five'] = ['one', 'two'];
+        console.log(one, two, three);
+
+        [one, two, three = 'three'] = ['one', 'two', 'ten'];
+        console.log(one, two, three);
+
+        // объекты
+        console.log('==Деструктуризация объекта==');
+        let user = {
+            name: "Pupa",
+            email: "pupa123@pupa.com",
+            age: 50
+        };
+
+        let {name, email, age} = user;
+        console.log(name, email, age);
+
+
+
+
+
 
     </script>
     

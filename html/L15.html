@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // // use strict - это режим ------------------------------------------------------------
+        // // 'use strict' // может располагаться как в начале скрипта, так и в конкретной функции.
+        // // нельзя присваивать значения / обращаться к необъявленным переменным
+        // function undefVar() {
+        //     // 'use strict';
+        //     a = '123';
+        //     return a;
+        // }
+
+        // undefVar(); // Uncaught ReferenceError: a is not defined
+
+        // // какое значение у this? Ответ: Зависит от контекста использования ------------------------------------------------------------
+        // const carDescription = {
+        //     brand: 'Ford Mustang Shelby',
+        //     year: 2020,
+        //     getBrand() {
+        //         return this.brand
+        //     },
+        //     isRegistered: true
+        // }
+        // console.log(carDescription.getBrand());
+
+        // стрелочные функции ------------------------------------------------------------
+        var getCurrentDate = function() {
+            return new Date();
+        }
+
+        const getCurrentDate1 = () => new Date();
+
+        function greeting(name) {
+            return 'Hello ' + name + '!';
+        }
+
+        const greet = (name) => `Hello ${name}`;
+        const greet2 = name => `Hello ${name}`;
+
+        console.log(greet('Anna'));
+        console.log(greet2('Tom'));
+
+        // Шаблонные литералы ------------------------------------------------------------
+
+
+    </script>
+    
+</body>
+</html>
